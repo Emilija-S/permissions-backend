@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PermissionsUsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/all-users', [UserController::class, 'getAllUsers']);
+Route::get('/all-permissions', [PermissionController::class, 'getAllPermissions']);
+Route::apiResource('/user-permission', PermissionsUsersController::class)->only('store');

@@ -24,3 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/all-users', [UserController::class, 'getAllUsers']);
 Route::get('/all-permissions', [PermissionController::class, 'getAllPermissions']);
 Route::apiResource('/user-permission', PermissionsUsersController::class)->only('store');
+Route::get('/user/{id}', [UserController::class, 'displayUserPermissions']);

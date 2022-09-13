@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permission__users', function (Blueprint $table) {
+        Schema::create('permissions__users', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
             $table->integer('permission_id');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permission__users');
+        Schema::dropIfExists('permissions__users');
     }
 };
